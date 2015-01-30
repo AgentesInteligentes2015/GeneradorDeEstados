@@ -59,7 +59,7 @@ public class GeneradorEstados{
     *//*-------------------*/
 
     enum instruccion{
-       arriba, abajo, izquierda, derecha
+        arriba, abajo, izquierda, derecha
     }
 
 
@@ -83,7 +83,7 @@ public class GeneradorEstados{
     /*------------------------------------*/
 
 
-        public static void main (String[]args){
+    public static void main (String[]args){
         System.out.print("Sup nigga'");
     }
 

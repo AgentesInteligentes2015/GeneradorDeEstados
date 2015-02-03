@@ -1,10 +1,13 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Created by ShaulaLuz on 29/01/2015.
  */
 
-public class Generador2
+public class Generador3
 {
 
     /*Dimensiones*/
@@ -19,18 +22,17 @@ public class Generador2
     int fc = 0;
     */
 
-    Random stID = new Random();     //Identificador de estado
+    Random stID = new Random();
 
-    int initSt[][][] = new int[face][rows][cols];   //Estado incial
-    int [][][] curInfo;                             //Posición actual(?)
+    int initSt[][][] = new int[face][rows][cols];
+    int [][][] curInfo;
 
     public class State
     {
-        int info[][][];                             //Información del éstado (Número almacenado en x, y, z posición)
-        HashMap<String, State> vecinos = new HashMap<String, State>();      //Lista de vecinos e instrucción para llegar a ellos desde el estado actual
-        boolean valido;                             //Bit de validez
-        boolean visitado;                           //Bit de visitado
-
+        int info[][][];
+        HashMap<String, State> vecinos = new HashMap<String, State>();
+        boolean valido;
+        boolean visitado;
         public String toString ()
         {
             String ret= new String (" ");
@@ -48,7 +50,6 @@ public class Generador2
             return ret;
 
         }
-
         public State (int[][][] info)
         {
             this.info=info;
@@ -57,8 +58,7 @@ public class Generador2
         }
     }
 
-    static List<State> states = new LinkedList<State>();
-
+    static List<State> states = new ArrayList<State>();
     State initState;
 
     public enum instrucciones {       //Instrucciones de movimiento
@@ -67,9 +67,7 @@ public class Generador2
 
     /*incializar estado 0*/
     public State setInitSt(){
-
         ArrayList<Integer> numeros = new ArrayList<Integer>();
-
         int r;
         Random rand = new Random();     //NÃºmero al azar para llenar la matriz
 
@@ -95,7 +93,6 @@ public class Generador2
                 }
             }
         }
-
         initState=new State(initSt);
         states.add(initState);
         return initState;
@@ -156,7 +153,7 @@ public class Generador2
             case derecha:
             {
                 limit=0;
-                for(int i =0; i<rows;i++)
+                for(int i =0; i<cols;i++)
                 {
                     if(estado.info[0][i][limit]==0)
                     {
@@ -168,7 +165,7 @@ public class Generador2
             case izquierda:
             {
                 limit=cols-1;
-                for(int i =0; i<rows;i++)
+                for(int i =0; i<cols;i++)
                 {
                     if(estado.info[0][i][limit]==0)
                     {
@@ -208,8 +205,51 @@ public class Generador2
         State nxtSt;
         curInfo = estado.info;
         nxtSt=new State(curInfo);
-
         switch (inst) {
+
+            case izquierda:
+                if (checkvalidity(estado,inst))
+                {
+                    int [] place0= new int [3];
+                    place0=find0(estado);
+                    int swap= estado.info[place0[0]][place0[1]][place0[2]+1];
+
+                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
+                    nxtSt.info[place0[0]][place0[1]][place0[2]+1]=0;
+                    if(states.contains(nxtSt)){
+
+                    }else{
+
+                        estado.vecinos.put("izquierda", nxtSt);
+                        nxtSt.vecinos.put("derecha",estado);
+                        nxtSt.valido=true;
+                        System.out.print("\n IZQUIERDA \n _________ \n"+nxtSt.toString());
+                    }
+                }
+
+                break;
+
+            case derecha:
+                if (checkvalidity(estado,inst))
+                {
+                    int [] place0= new int [3];
+                    place0=find0(estado);
+                    int swap= estado.info[place0[0]][place0[1]][place0[2]-1];
+
+                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
+                    nxtSt.info[place0[0]][place0[1]][place0[2]-1]=0;
+                    if(states.contains(nxtSt)){
+
+                    }else{
+
+                        estado.vecinos.put("derecha", nxtSt);
+                        nxtSt.vecinos.put("izquierda",estado);
+                        nxtSt.valido=true;
+                        System.out.print("\n DERECHA \n _________ \n"+nxtSt.toString());
+                    }
+
+                }
+                break;
             case arriba:
                 if (checkvalidity(estado,inst))
                 {
@@ -252,49 +292,6 @@ public class Generador2
                     }
                 }
                 break;
-            case izquierda:
-                if (checkvalidity(estado,inst))
-                {
-                    int [] place0= new int [3];
-                    place0=find0(estado);
-                    int swap= estado.info[place0[0]][place0[1]][place0[2]+1];
-
-                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
-                    nxtSt.info[place0[0]][place0[1]][place0[2]+1]=0;
-                    if(states.contains(nxtSt)){
-
-                    }else{
-
-                        estado.vecinos.put("izquierda", nxtSt);
-                        nxtSt.vecinos.put("derecha",estado);
-                        nxtSt.valido=true;
-                        System.out.print("\n IZQUIERDA \n _________ \n"+nxtSt.toString());
-                    }
-                }
-
-                break;
-
-            case derecha:
-                if (checkvalidity(estado,inst))
-                {
-                    int [] place0= new int [3];
-                    place0=find0(estado);
-                    int swap= estado.info[place0[0]][place0[1]][place0[2]-1];
-
-                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
-                    nxtSt.info[place0[0]][place0[1]][place0[2]-1]=0;
-                    if(states.contains(nxtSt)){
-
-                    }else{
-
-                        estado.vecinos.put("derecha", nxtSt);
-                        nxtSt.vecinos.put("izquierda",estado);
-                        nxtSt.valido=true;
-                        System.out.print("\n DERECHA \n _________ \n" + nxtSt.toString());
-                    }
-
-                }
-                break;
 
             default:
                 System.out.print("InstrucciÃ³n invÃ¡lida");
@@ -310,41 +307,20 @@ public class Generador2
     public static void main(String[] args)
     {
 
-        Generador2 solve = new Generador2();
+
+        Generador3 solve = new Generador3();
         State add;
-        State init = solve.setInitSt();
-
-        add=solve.genSt(init, instrucciones.arriba);
-      //  System.out.print("Added state U: \n");
-        states.add(add);
-
-        add=solve.genSt(init, instrucciones.derecha);
-      //  System.out.print("Added state R: \n");
-        states.add(add);
-
-        add=solve.genSt(init, instrucciones.abajo);
-    //    System.out.print("Added state D: \n");
-        states.add(add);
-
-        add=solve.genSt(init, instrucciones.izquierda);
-       // System.out.print("Added state L: \n");
-        states.add(add);
-
-
-
-        ListIterator<State> iter = states.listIterator();
-
-        while(iter.hasPrevious())
+        solve.setInitSt();
+        for (State e:states)
         {
-            State e = iter.previous();
             add=solve.genSt(e, instrucciones.arriba);
-            iter.add(add);
+            states.add(add);
             add=solve.genSt(e, instrucciones.abajo);
-            iter.add(add);
+            states.add(add);
             add=solve.genSt(e, instrucciones.derecha);
-            iter.add(add);
+            states.add(add);
             add=solve.genSt(e, instrucciones.izquierda);
-            iter.add(add);
+            states.add(add);
         }
 
 

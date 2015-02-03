@@ -57,9 +57,12 @@ public class Generador2
         }
     }
 
+    ListIterator<State> iter = states.listIterator();
+
+
     static List<State> states = new LinkedList<State>();
 
-    State initState;
+    static State initState=null;
 
     public enum instrucciones {       //Instrucciones de movimiento
         arriba, abajo, izquierda, derecha
@@ -67,6 +70,7 @@ public class Generador2
 
     /*incializar estado 0*/
     public State setInitSt(){
+        System.out.print("Estado incial:\n");
 
         ArrayList<Integer> numeros = new ArrayList<Integer>();
 
@@ -97,19 +101,21 @@ public class Generador2
         }
 
         initState=new State(initSt);
-        states.add(initState);
+        //states.add(initState);
         return initState;
     }
 
-    public boolean repeated(State st) {
+    public State repeated(State st) {
         int i;
+
         for(i=0; i<states.size(); i++){
-            if(states.get(i).info.equals(st.info)){
-                return true;
+            State meh = states.get(i);
+            if(meh.info == st.info){
+                System.out.print("\n\nEstado existente\n\n");
+                return st;
             }
         }
-
-        return false;
+        return null;
     }
 
     public boolean visited(State st){
@@ -205,95 +211,111 @@ public class Generador2
 
     /*Generar todos los estados posibles*/
     public State genSt(State estado, instrucciones inst) {
-        State nxtSt;
-        curInfo = estado.info;
-        nxtSt=new State(curInfo);
+        State nxtSt =null;
+        //nxtSt.info = estado.info;
+        int [][][] toswap =new int[face][rows][cols];
+        int [] place0= new int [3];
 
         switch (inst) {
             case arriba:
-                if (checkvalidity(estado,inst))
+                boolean val = checkvalidity(estado, inst);
+                if (val)
                 {
-                    int [] place0= new int [3];
+
                     place0=find0(estado);
+                    toswap=estado.info;
                     int swap= estado.info[place0[0]][place0[1]+1][place0[2]];
 
-                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
-                    nxtSt.info[place0[0]][place0[1]+1][place0[2]]=0;
-                    if(states.contains(nxtSt)){
+                    toswap[place0[0]][place0[1]][place0[2]]=swap;
+                    toswap[place0[0]][place0[1]+1][place0[2]]=0;
+                    nxtSt=new State(toswap);
 
-                    }else{
-
+                    nxtSt = repeated(nxtSt);
+                    if(nxtSt!=null) {
+                        System.out.print("\nESTADO NUEVO\n");
                         estado.vecinos.put("arriba", nxtSt);
-                        nxtSt.vecinos.put("abajo",estado);
-                        nxtSt.valido=true;
-                        System.out.print("\n ARRIBA \n _________ \n"+nxtSt.toString());
-                    }
-                }
+                        nxtSt.vecinos.put("abajo", estado);
+                        nxtSt.valido = true;
+                        System.out.print("\n ARRIBA \n _________ \n" + nxtSt.toString());
+                    }else
+                        System.out.print("\nREPEATED ARRIBA\n");
+                }else return null;
 
                 break;
 
             case abajo:
-                if (checkvalidity(estado,inst))
+                val = checkvalidity(estado, inst);
+                if (val)
                 {
-                    int [] place0= new int [3];
                     place0=find0(estado);
+                    toswap=estado.info.clone();
                     int swap= estado.info[place0[0]][place0[1]-1][place0[2]];
 
-                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
-                    nxtSt.info[place0[0]][place0[1]-1][place0[2]]=0;
-                    if(states.contains(nxtSt)){
+                    toswap[place0[0]][place0[1]][place0[2]]=swap;
+                    toswap[place0[0]][place0[1]-1][place0[2]]=0;
+                    nxtSt=new State(toswap);
 
-                    }else{
+                    nxtSt = repeated(nxtSt);
+                    if(nxtSt!=null) {
+                        System.out.print("\nESTADO NUEVO\n");
 
                         estado.vecinos.put("abajo", nxtSt);
-                        nxtSt.vecinos.put("arriba",estado);
-                        nxtSt.valido=true;
-                        System.out.print("\n ABAJO \n _________ \n"+nxtSt.toString());
-                    }
-                }
+                        nxtSt.vecinos.put("arriba", estado);
+                        nxtSt.valido = true;
+                        System.out.print("\n ABAJO \n _________ \n" + nxtSt.toString());
+                    }else
+                        System.out.print("\nREPEATED ABAJO\n");
+                }else return null;
                 break;
             case izquierda:
-                if (checkvalidity(estado,inst))
+                val = checkvalidity(estado, inst);
+                if (val)
                 {
-                    int [] place0= new int [3];
                     place0=find0(estado);
+
+                    toswap=estado.info.clone();
                     int swap= estado.info[place0[0]][place0[1]][place0[2]+1];
 
-                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
-                    nxtSt.info[place0[0]][place0[1]][place0[2]+1]=0;
-                    if(states.contains(nxtSt)){
-
-                    }else{
+                    toswap[place0[0]][place0[1]][place0[2]]=swap;
+                    toswap[place0[0]][place0[1]][place0[2]+1]=0;
+                    nxtSt=new State(toswap);
+                    nxtSt = repeated(nxtSt);
+                    if(nxtSt!=null) {
+                        System.out.print("\nESTADO NUEVO\n");
 
                         estado.vecinos.put("izquierda", nxtSt);
-                        nxtSt.vecinos.put("derecha",estado);
-                        nxtSt.valido=true;
-                        System.out.print("\n IZQUIERDA \n _________ \n"+nxtSt.toString());
-                    }
-                }
+                        nxtSt.vecinos.put("derecha", estado);
+                        nxtSt.valido = true;
+                        System.out.print("\n IZQUIERDA \n _________ \n" + nxtSt.toString());
+                    }else
+                        System.out.print("\nREPEATED IZQUIERDA\n");
+                }else return null;
 
                 break;
 
             case derecha:
-                if (checkvalidity(estado,inst))
+                val = checkvalidity(estado, inst);
+                if (val)
                 {
-                    int [] place0= new int [3];
                     place0=find0(estado);
+                    toswap=estado.info.clone();
                     int swap= estado.info[place0[0]][place0[1]][place0[2]-1];
 
-                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
-                    nxtSt.info[place0[0]][place0[1]][place0[2]-1]=0;
-                    if(states.contains(nxtSt)){
-
-                    }else{
+                    toswap[place0[0]][place0[1]][place0[2]]=swap;
+                    toswap[place0[0]][place0[1]][place0[2]-1]=0;
+                    nxtSt=new State(toswap);
+                    nxtSt = repeated(nxtSt);
+                    if(nxtSt!=null) {
+                        System.out.print("\nESTADO NUEVO\n");
 
                         estado.vecinos.put("derecha", nxtSt);
-                        nxtSt.vecinos.put("izquierda",estado);
-                        nxtSt.valido=true;
+                        nxtSt.vecinos.put("izquierda", estado);
+                        nxtSt.valido = true;
                         System.out.print("\n DERECHA \n _________ \n" + nxtSt.toString());
-                    }
+                    }else
+                        System.out.print("\nREPEATED DERECHA\n");
 
-                }
+                }else return null;
                 break;
 
             default:
@@ -311,60 +333,69 @@ public class Generador2
     {
 
         Generador2 solve = new Generador2();
-        State add;
-        State init = solve.setInitSt();
+        State add = null;
+        solve.setInitSt();
+        states.add(initState);
 
         ListIterator<State> iter = states.listIterator();
 
+        add=solve.genSt(initState, instrucciones.arriba);
+        if(add!=null){
+            System.out.print("Added state iU: \n");
+            iter.add(add);
+        }
 
-        add=solve.genSt(init, instrucciones.arriba);
-      //  System.out.print("Added state U: \n");
-       // states.add(add);
-        iter.add(add);
+       add=solve.genSt(initState, instrucciones.derecha);
+        if(add!=null){
+            System.out.print("Added state iR: \n");
+            iter.add(add);
+        }
 
-       add=solve.genSt(init, instrucciones.derecha);
-      //  System.out.print("Added state R: \n");
-       // states.add(add);
-        iter.add(add);
+        add=solve.genSt(initState, instrucciones.abajo);
+        if(add!=null){
+            System.out.print("Added state iD: \n");
+            iter.add(add);
+        }
 
-        add=solve.genSt(init, instrucciones.abajo);
-    //    System.out.print("Added state D: \n");
-      //  states.add(add);
-        iter.add(add);
+        add=solve.genSt(initState, instrucciones.izquierda);
+        if(add!=null){
+            System.out.print("Added state iL: \n");
+            iter.add(add);
+        }
 
-        add=solve.genSt(init, instrucciones.izquierda);
-       // System.out.print("Added state L: \n");
-        //states.add(add);
-
-        iter.add(add);
+        iter.next();
 
 
         while(iter.hasPrevious())
         {
             State e = iter.previous();
 
-            add=solve.genSt(e, instrucciones.arriba);
-            if(solve.repeated(add)){
-                continue;
-            }else{
-            iter.add(add);}
-            add=solve.genSt(e, instrucciones.derecha);
-            if(solve.repeated(add)){
-                continue;
-            }else{
-                iter.add(add);}
-            add=solve.genSt(e, instrucciones.abajo);
-            if(solve.repeated(add)){
-                continue;
-            }else{
-                iter.add(add);}
-            add=solve.genSt(e, instrucciones.izquierda);
-            if(solve.repeated(add)){
-                continue;
-            }else{
-                iter.add(add);}
+            /*e = solve.repeated(e);
+            while (states.contains(e) && iter.hasPrevious()){
+                e = iter.previous();
+            }*/
 
-            iter.next();
+            add=solve.genSt(e, instrucciones.arriba);
+            if(add!=null){
+                iter.add(add);
+            }
+
+
+            add=solve.genSt(e, instrucciones.derecha);
+            if(add!=null){
+                iter.add(add);
+            }
+
+            add=solve.genSt(e, instrucciones.abajo);
+            if(add!=null){
+                iter.add(add);
+            }
+
+            add=solve.genSt(e, instrucciones.izquierda);
+            if(add!=null){
+                iter.add(add);
+            }
+
         }
 
 

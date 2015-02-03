@@ -334,6 +334,8 @@ public class Generador2
 
         ListIterator<State> iter = states.listIterator();
 
+        iter.add(add);
+        
         while(iter.hasPrevious())
         {
             State e = iter.previous();

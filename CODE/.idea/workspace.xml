@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23141379-7f7a-4a4f-a141-b82f4a1c5849" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Generador3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$1.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$instrucciones.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$instrucciones.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Generador2.java" afterPath="$PROJECT_DIR$/src/Generador2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GeneradorEstados.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +30,8 @@
       <file leaf-file-name="Generador2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Generador2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18820225" vertical-offset="2262" max-vertical-offset="3570">
-              <caret line="284" column="63" selection-start-line="284" selection-start-column="63" selection-end-line="284" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.4747191" vertical-offset="3061" max-vertical-offset="3604">
+              <caret line="337" column="8" selection-start-line="337" selection-start-column="8" selection-end-line="337" selection-end-column="8" />
               <folding>
                 <element signature="e#880#895#0" expanded="true" />
                 <element signature="method#toString#0;class#State#0;class#Generador2#0" expanded="false" />
@@ -540,8 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Generador2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18820225" vertical-offset="2262" max-vertical-offset="3570">
-          <caret line="284" column="63" selection-start-line="284" selection-start-column="63" selection-end-line="284" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.4747191" vertical-offset="3061" max-vertical-offset="3604">
+          <caret line="337" column="8" selection-start-line="337" selection-start-column="8" selection-end-line="337" selection-end-column="8" />
           <folding>
             <element signature="e#880#895#0" expanded="true" />
             <element signature="method#toString#0;class#State#0;class#Generador2#0" expanded="false" />

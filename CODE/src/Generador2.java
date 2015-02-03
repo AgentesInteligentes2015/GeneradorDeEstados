@@ -101,15 +101,15 @@ public class Generador2
         return initState;
     }
 
-    public State repeated(State st) {
+    public boolean repeated(State st) {
         int i;
         for(i=0; i<states.size(); i++){
-            if(states.get(i).equals(st)){
-                return st;
+            if(states.get(i).info.equals(st.info)){
+                return true;
             }
         }
 
-        return states.get(i);
+        return false;
     }
 
     public boolean visited(State st){
@@ -314,39 +314,57 @@ public class Generador2
         State add;
         State init = solve.setInitSt();
 
+        ListIterator<State> iter = states.listIterator();
+
+
         add=solve.genSt(init, instrucciones.arriba);
       //  System.out.print("Added state U: \n");
-        states.add(add);
+       // states.add(add);
+        iter.add(add);
 
-        add=solve.genSt(init, instrucciones.derecha);
+       add=solve.genSt(init, instrucciones.derecha);
       //  System.out.print("Added state R: \n");
-        states.add(add);
+       // states.add(add);
+        iter.add(add);
 
         add=solve.genSt(init, instrucciones.abajo);
     //    System.out.print("Added state D: \n");
-        states.add(add);
+      //  states.add(add);
+        iter.add(add);
 
         add=solve.genSt(init, instrucciones.izquierda);
        // System.out.print("Added state L: \n");
-        states.add(add);
-
-
-
-        ListIterator<State> iter = states.listIterator();
+        //states.add(add);
 
         iter.add(add);
-        
+
+
         while(iter.hasPrevious())
         {
             State e = iter.previous();
+
             add=solve.genSt(e, instrucciones.arriba);
-            iter.add(add);
-            add=solve.genSt(e, instrucciones.abajo);
-            iter.add(add);
+            if(solve.repeated(add)){
+                continue;
+            }else{
+            iter.add(add);}
             add=solve.genSt(e, instrucciones.derecha);
-            iter.add(add);
+            if(solve.repeated(add)){
+                continue;
+            }else{
+                iter.add(add);}
+            add=solve.genSt(e, instrucciones.abajo);
+            if(solve.repeated(add)){
+                continue;
+            }else{
+                iter.add(add);}
             add=solve.genSt(e, instrucciones.izquierda);
-            iter.add(add);
+            if(solve.repeated(add)){
+                continue;
+            }else{
+                iter.add(add);}
+
+            iter.next();
         }
 
 

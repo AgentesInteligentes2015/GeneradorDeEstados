@@ -344,7 +344,7 @@ public class GeneradorConBuscarpila
     public static void main(String[] args)
     {
 
-        Generador2 solve = new Generador2();
+        GeneradorConBuscarpila solve = new GeneradorConBuscarpila();
         State add = null;
         solve.setInitSt();
         states.add(initState);
@@ -473,7 +473,7 @@ public class GeneradorConBuscarpila
     			{
     				al.add(currState.vecinos.get("arriba"));
     			}
-    			if(currState.vecinos.containsKey("abajo"))
+    			if(currStagte.vecinos.containsKey("abajo"))
     			{
     				al.add(currState.vecinos.get("abajo"));
     			}

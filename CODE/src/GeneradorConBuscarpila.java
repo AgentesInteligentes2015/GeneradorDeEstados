@@ -473,7 +473,7 @@ public class GeneradorConBuscarpila
     			{
     				al.add(currState.vecinos.get("arriba"));
     			}
-    			if(currStagte.vecinos.containsKey("abajo"))
+    			if(currState.vecinos.containsKey("abajo"))
     			{
     				al.add(currState.vecinos.get("abajo"));
     			}

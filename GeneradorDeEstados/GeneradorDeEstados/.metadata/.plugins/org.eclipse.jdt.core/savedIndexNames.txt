@@ -1,1 +1,0 @@
-INDEX VERSION 1.126+/home/lonepwolf/GitHub/AgentesInteligentes2015/GeneradorDeEstados/GeneradorDeEstados/GeneradorDeEstados/.metadata/.plugins/org.eclipse.jdt.core

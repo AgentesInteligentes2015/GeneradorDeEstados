@@ -8,9 +8,9 @@ public class Generador2
 {
 
     /*Dimensiones*/
-    final int cols = 2; //NÃºmero de filas por cara
-    final int rows = 2; //NÃºmero de columnas por cara
-    final int face = 1; /*NÃºmero de caras: En caso de ser cubo face=6
+    final static int cols = 2; //NÃºmero de filas por cara
+    final static int rows = 2; //NÃºmero de columnas por cara
+    final static int face = 1; /*NÃºmero de caras: En caso de ser cubo face=6
                           En caso de ser cuadro mÃ¡gico o grafos =1
     /*------------
 
@@ -30,7 +30,22 @@ public class Generador2
         HashMap<String, State> vecinos = new HashMap<String, State>();      //Lista de vecinos e instrucción para llegar a ellos desde el estado actual
         boolean valido;                             //Bit de validez
         boolean visitado;                           //Bit de visitado
-
+        public boolean equals(State s)
+        {
+        	boolean iguales=true;
+        	for(int i=0;i<face;i++)
+        	{
+        		for (int j=0;j<rows;j++)
+        		{
+        			for (int k=0;k<cols;k++)
+        			{
+        				if(this.info[i][j][k]!=s.info[i][j][k])
+        					iguales=false;
+        			}
+        		}
+        	}
+        	return iguales;
+        }
         public String toString ()
         {
             String ret= new String (" ");
@@ -54,6 +69,10 @@ public class Generador2
             this.info=info;
             this.valido=true;
             this.visitado=false;
+        }
+        public State clone()
+        {
+        	return new State(this.info);
         }
     }
 
@@ -105,7 +124,7 @@ public class Generador2
         return initState;
     }
 
-    public State repeated(State st) {
+    public static State repeated(State st) {
         int i;
 
         for(i=0; i<states.size(); i++){
@@ -134,7 +153,7 @@ public class Generador2
         return false;
     }
 
-    public boolean checkvalidity(State estado, instrucciones inst)
+    public static boolean checkvalidity(State estado, instrucciones inst)
     {
         int limit;
         boolean found = false;
@@ -191,7 +210,7 @@ public class Generador2
         }
         return !found;
     }
-    public int[] find0(State estado)
+    public static int[] find0(State estado)
     {
         int [] posicion= new int [3];
         for(int i =0;i<face;i++)
@@ -215,8 +234,8 @@ public class Generador2
     }
 
     /*Generar todos los estados posibles*/
-    public State genSt(State estado, instrucciones inst) {
-        State nxtSt =null;
+    public static State genSt(State estado, instrucciones inst, Generador2 gen) {
+        State nxtSt =(State) estado.clone();
         //nxtSt.info = estado.info;
         int [][][] toswap =new int[face][rows][cols];
         int [] place0= new int [3];
@@ -230,9 +249,11 @@ public class Generador2
                     toswap=estado.info.clone();
                     int swap= estado.info[place0[0]][place0[1]+1][place0[2]];
 
-                    toswap[place0[0]][place0[1]][place0[2]]=swap;
-                    toswap[place0[0]][place0[1]+1][place0[2]]=0;
-                    nxtSt=new State(toswap);
+                    //toswap[place0[0]][place0[1]][place0[2]]=swap;
+                    //toswap[place0[0]][place0[1]+1][place0[2]]=0;
+                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
+                    nxtSt.info[place0[0]][place0[1]+1][place0[2]]=0;
+                    //nxtSt=gen.new State(toswap);
 
                     nxtSt = repeated(nxtSt);
                     if(nxtSt!=null) {
@@ -240,6 +261,7 @@ public class Generador2
                         nxtSt.vecinos.put("abajo", estado);
                         nxtSt.valido = true;
                         System.out.print("\n ARRIBA \n _________ \n" + nxtSt.toString());
+                        System.out.print("INICIAL: "+nxtSt.toString()+"\n\n");
                     }else
                         System.out.print("\nREPEATED ARRIBA\n");
                 }else return null;
@@ -255,7 +277,7 @@ public class Generador2
 
                     toswap[place0[0]][place0[1]][place0[2]]=swap;
                     toswap[place0[0]][place0[1]-1][place0[2]]=0;
-                    nxtSt=new State(toswap);
+                    nxtSt=gen.new State(toswap);
 
                     nxtSt = repeated(nxtSt);
                     if(nxtSt!=null) {
@@ -263,6 +285,7 @@ public class Generador2
                         nxtSt.vecinos.put("arriba", estado);
                         nxtSt.valido = true;
                         System.out.print("\n ABAJO \n _________ \n" + nxtSt.toString());
+                        System.out.print("INICIAL: "+nxtSt.toString()+"\n\n");
                     }else
                         System.out.print("\nREPEATED ABAJO\n");
                 }else return null;
@@ -279,13 +302,14 @@ public class Generador2
 
                     toswap[place0[0]][place0[1]][place0[2]]=swap;       //Realiza movimiento de números
                     toswap[place0[0]][place0[1]][place0[2]+1]=0;
-                    nxtSt=new State(toswap);
+                    nxtSt=gen.new State(toswap);
                     nxtSt = repeated(nxtSt);                            //Asegura que el nuevo estado no sea repetido
                     if(nxtSt!=null) {
                         estado.vecinos.put("izquierda", nxtSt);         //Completa información del nuevo estado
                         nxtSt.vecinos.put("derecha", estado);
                         nxtSt.valido = true;
                         System.out.print("\n IZQUIERDA \n _________ \n" + nxtSt.toString());
+                        System.out.print("INICIAL: "+nxtSt.toString()+"\n\n");
                     }else
                         System.out.print("\nREPEATED IZQUIERDA\n");
                 }else return null;
@@ -302,13 +326,14 @@ public class Generador2
 
                     toswap[place0[0]][place0[1]][place0[2]]=swap;
                     toswap[place0[0]][place0[1]][place0[2]-1]=0;
-                    nxtSt=new State(toswap);
+                    nxtSt=gen.new State(toswap);
                     nxtSt = repeated(nxtSt);
                     if(nxtSt!=null) {
                         estado.vecinos.put("derecha", nxtSt);
                         nxtSt.vecinos.put("izquierda", estado);
                         nxtSt.valido = true;
                         System.out.print("\n DERECHA \n _________\n" + nxtSt.toString());
+                        System.out.print("INICIAL: "+nxtSt.toString()+"\n\n");
                     }else
                         System.out.print("\nREPEATED DERECHA\n");
 
@@ -324,7 +349,7 @@ public class Generador2
     }
 
     /*------------------------------------*/
-
+    static State stoSearch;
 
     public static void main(String[] args)
     {
@@ -336,22 +361,22 @@ public class Generador2
 
         ListIterator<State> iter = states.listIterator();
 
-        add=solve.genSt(initState, instrucciones.arriba);       //Crea los primeros cuatro estados generados del estado inicial
+        add=Generador2.genSt(initState, instrucciones.arriba,solve);       //Crea los primeros cuatro estados generados del estado inicial
         if(add!=null){
             iter.add(add);
         }
 
-       add=solve.genSt(initState, instrucciones.derecha);
+       add=Generador2.genSt(initState, instrucciones.derecha,solve);
         if(add!=null){
             iter.add(add);
         }
 
-        add=solve.genSt(initState, instrucciones.abajo);
+        add=Generador2.genSt(initState, instrucciones.abajo,solve);
         if(add!=null){
             iter.add(add);
         }
 
-        add=solve.genSt(initState, instrucciones.izquierda);
+        add=Generador2.genSt(initState, instrucciones.izquierda,solve);
         if(add!=null){
             iter.add(add);
         }
@@ -367,29 +392,82 @@ public class Generador2
                 continue;
             }
 
-            add=solve.genSt(e, instrucciones.arriba);       //Instrucciones de movimientos
-            if(add!=null){                                  //Si el estado no tuvo ningún conflicto de validación se agrega a la lista de estados
+            add=Generador2.genSt(e, instrucciones.arriba,solve);       //Instrucciones de movimientos
+            if(add!=null)
+            {                                  //Si el estado no tuvo ningún conflicto de validación se agrega a la lista de estados
                 iter.add(add);
-            }else continue;
-
-
-            add=solve.genSt(e, instrucciones.derecha);
-            if(add!=null){
+            }
+            else continue;
+            add=Generador2.genSt(e, instrucciones.derecha,solve);
+            if(add!=null)
+            {
                 iter.add(add);
-            }else continue;
+            }
+            else continue;
 
-            add=solve.genSt(e, instrucciones.abajo);
-            if(add!=null){
+            add=Generador2.genSt(e, instrucciones.abajo,solve);
+            if(add!=null)
+            {
                 iter.add(add);
-            }else continue;
+            }
+            else continue;
 
-            add=solve.genSt(e, instrucciones.izquierda);
-            if(add!=null){
+            add=Generador2.genSt(e, instrucciones.izquierda,solve);
+            if(add!=null)
+            {
                 iter.add(add);
-            }else continue;
-
+            }
+            else continue;
         }
-
-
+        //Here Starts What I Added -Daniel 
+        System.out.print("\n FINISHED ADDING STATES\n_____________________\n\n");
+        System.out.print("\n searching through Stack: \n");
+        int tosearch[][][]=new int [face][rows][cols];
+        tosearch[0][0][0]=1;
+        tosearch[0][0][1]=2;
+        tosearch[0][1][0]=3;
+        tosearch[0][1][1]=0;
+        stoSearch=solve.new State(tosearch);
+       
+        System.out.print(buscarpilas.buscarpila(stoSearch).toString()+"\nFINISHED SEARCHING\n_____________________\n\n");
+    }
+    public static class buscarpilas
+    {
+    	public static ArrayList<State> buscarpila(State finalstate)
+    	{
+    		ArrayList<State> toreturn = new ArrayList<State>();
+    		Stack<State>mystack=new Stack<State>();
+    		mystack.push(initState);
+    		State currState;
+    		currState=null;
+    		do
+    		{
+    			currState=mystack.pop();
+    			System.out.print("ESTADO ACTUAL:\n"+currState.toString()+currState.visitado);
+    			currState.visitado=true;
+    			toreturn.add(currState);
+    			if(currState.vecinos.containsKey("arriba"))
+    			{
+    				mystack.push(currState).vecinos.get("arriba");
+    			}
+    			if(currState.vecinos.containsKey("abajo"))
+    			{
+    				mystack.push(currState).vecinos.get("abajo");
+    			}
+    			if(currState.vecinos.containsKey("izquierda"))
+    			{
+    				mystack.push(currState).vecinos.get("izquierda");
+    			}
+    			if(currState.vecinos.containsKey("derecha"))
+    			{
+    				mystack.push(currState).vecinos.get("derecha");
+    			}
+    		}while(!mystack.isEmpty() && !currState.equals(finalstate) /*&& !currState.visitado*/);
+    		for(State e: toreturn)
+    		{
+    			e.toString();
+    		}
+    		return toreturn;
+    	}
     }
 }

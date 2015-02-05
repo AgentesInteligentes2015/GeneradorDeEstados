@@ -31,9 +31,28 @@ public class Generador2
         HashMap<String, State> vecinos = new HashMap<String, State>();      //Lista de vecinos e instrucción para llegar a ellos desde el estado actual
         boolean valido;                             //Bit de validez
         boolean visitado;                           //Bit de visitado
+<<<<<<< HEAD
         boolean visitadop;
         boolean visitados;
  
+=======
+        public boolean equals(State s)
+        {
+        	boolean iguales=true;
+        	for(int i=0;i<face;i++)
+        	{
+        		for (int j=0;j<rows;j++)
+        		{
+        			for (int k=0;k<cols;k++)
+        			{
+        				if(this.info[i][j][k]!=s.info[i][j][k])
+        					iguales=false;
+        			}
+        		}
+        	}
+        	return iguales;
+        }
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
         public String toString ()
         {
             String ret= new String (" ");
@@ -59,6 +78,10 @@ public class Generador2
             this.visitado=false;
             this.visitadop=false;
             this.visitados=false;
+        }
+        public State clone()
+        {
+        	return new State(this.info);
         }
     }
  
@@ -109,8 +132,13 @@ public class Generador2
         //states.add(initState);
         return initState;
     }
+<<<<<<< HEAD
  
     public State repeated(State st) {
+=======
+
+    public static State repeated(State st) {
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
         int i;
  
         for(i=0; i<states.size(); i++){
@@ -139,8 +167,13 @@ public class Generador2
  
         return false;
     }
+<<<<<<< HEAD
  
     public boolean checkvalidity(State estado, instrucciones inst)
+=======
+
+    public static boolean checkvalidity(State estado, instrucciones inst)
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
     {
         int limit;
         boolean found = false;
@@ -197,7 +230,7 @@ public class Generador2
         }
         return !found;
     }
-    public int[] find0(State estado)
+    public static int[] find0(State estado)
     {
         int [] posicion= new int [3];
         for(int i =0;i<face;i++)
@@ -221,6 +254,7 @@ public class Generador2
     }
  
     /*Generar todos los estados posibles*/
+<<<<<<< HEAD
     public State genSt(State estado, instrucciones inst) {
         Cloner cloner = new Cloner();
         curInfo = cloner.deepClone(estado.info);
@@ -228,6 +262,12 @@ public class Generador2
         State nxtSt = new State(curInfo);
  
         //int [][][] toswap =new int[face][rows][cols];
+=======
+    public static State genSt(State estado, instrucciones inst, Generador2 gen) {
+        State nxtSt =(State) estado.clone();
+        //nxtSt.info = estado.info;
+        int [][][] toswap =new int[face][rows][cols];
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
         int [] place0= new int [3];
  
         switch (inst) {
@@ -238,11 +278,21 @@ public class Generador2
                     place0=find0(estado);
                     //toswap=estado.info.clone();
                     int swap= estado.info[place0[0]][place0[1]+1][place0[2]];
+<<<<<<< HEAD
  
                     nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
                     nxtSt.info[place0[0]][place0[1]+1][place0[2]]=0;
                     //nxtSt=new State(toswap);
  
+=======
+
+                    //toswap[place0[0]][place0[1]][place0[2]]=swap;
+                    //toswap[place0[0]][place0[1]+1][place0[2]]=0;
+                    nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
+                    nxtSt.info[place0[0]][place0[1]+1][place0[2]]=0;
+                    //nxtSt=gen.new State(toswap);
+
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
                     nxtSt = repeated(nxtSt);
                     if(nxtSt!=null) {
                         estado.vecinos.put("arriba", nxtSt);
@@ -250,6 +300,7 @@ public class Generador2
                         nxtSt.valido = true;
                         estado.visitado=true;
                         System.out.print("\n ARRIBA \n _________ \n" + nxtSt.toString());
+                        System.out.print("INICIAL: "+nxtSt.toString()+"\n\n");
                     }else
                         System.out.print("\nREPEATED ARRIBA\n");
                 }else return null;
@@ -262,11 +313,19 @@ public class Generador2
                     place0=find0(estado);
                     //toswap=estado.info.clone();
                     int swap= estado.info[place0[0]][place0[1]-1][place0[2]];
+<<<<<<< HEAD
  
                     nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
                     nxtSt.info[place0[0]][place0[1]-1][place0[2]]=0;
                     //nxtSt=new State(toswap);
  
+=======
+
+                    toswap[place0[0]][place0[1]][place0[2]]=swap;
+                    toswap[place0[0]][place0[1]-1][place0[2]]=0;
+                    nxtSt=gen.new State(toswap);
+
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
                     nxtSt = repeated(nxtSt);
                     if(nxtSt!=null) {
                         estado.vecinos.put("abajo", nxtSt);
@@ -274,6 +333,7 @@ public class Generador2
                         nxtSt.valido = true;
                         estado.visitado=true;
                         System.out.print("\n ABAJO \n _________ \n" + nxtSt.toString());
+                        System.out.print("INICIAL: "+nxtSt.toString()+"\n\n");
                     }else
                         System.out.print("\nREPEATED ABAJO\n");
                 }else return null;
@@ -287,10 +347,17 @@ public class Generador2
  
                     //toswap=estado.info.clone();
                     int swap= estado.info[place0[0]][place0[1]][place0[2]+1];
+<<<<<<< HEAD
  
                     nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;       //Realiza movimiento de números
                     nxtSt.info[place0[0]][place0[1]][place0[2]+1]=0;
                     //nxtSt=new State(toswap);
+=======
+
+                    toswap[place0[0]][place0[1]][place0[2]]=swap;       //Realiza movimiento de números
+                    toswap[place0[0]][place0[1]][place0[2]+1]=0;
+                    nxtSt=gen.new State(toswap);
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
                     nxtSt = repeated(nxtSt);                            //Asegura que el nuevo estado no sea repetido
                     if(nxtSt!=null) {
                         estado.vecinos.put("izquierda", nxtSt);         //Completa información del nuevo estado
@@ -298,6 +365,7 @@ public class Generador2
                         nxtSt.valido = true;
                         estado.visitado=true;
                         System.out.print("\n IZQUIERDA \n _________ \n" + nxtSt.toString());
+                        System.out.print("INICIAL: "+nxtSt.toString()+"\n\n");
                     }else
                         System.out.print("\nREPEATED IZQUIERDA\n");
                 }else return null;
@@ -311,10 +379,17 @@ public class Generador2
                     place0=find0(estado);
                     //toswap=estado.info.clone();
                     int swap= estado.info[place0[0]][place0[1]][place0[2]-1];
+<<<<<<< HEAD
  
                     nxtSt.info[place0[0]][place0[1]][place0[2]]=swap;
                     nxtSt.info[place0[0]][place0[1]][place0[2]-1]=0;
                     //nxtSt=new State(toswap);
+=======
+
+                    toswap[place0[0]][place0[1]][place0[2]]=swap;
+                    toswap[place0[0]][place0[1]][place0[2]-1]=0;
+                    nxtSt=gen.new State(toswap);
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
                     nxtSt = repeated(nxtSt);
                     if(nxtSt!=null) {
                         estado.vecinos.put("derecha", nxtSt);
@@ -322,6 +397,7 @@ public class Generador2
                         nxtSt.valido = true;
                         estado.visitado=true;
                         System.out.print("\n DERECHA \n _________\n" + nxtSt.toString());
+                        System.out.print("INICIAL: "+nxtSt.toString()+"\n\n");
                     }else
                         System.out.print("\nREPEATED DERECHA\n");
  
@@ -337,6 +413,7 @@ public class Generador2
     }
  
     /*------------------------------------*/
+<<<<<<< HEAD
     public static ArrayList<State> buscarpilaConArray(State finalstate) {
        // ArrayList<State> toreturn = new ArrayList<State>();
         ArrayList<State> al = new ArrayList<State>();
@@ -405,6 +482,10 @@ public class Generador2
     }
  
  
+=======
+    static State stoSearch;
+
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
     public static void main(String[] args)
     {
  
@@ -414,6 +495,7 @@ public class Generador2
         states.add(initState);
  
         ListIterator<State> iter = states.listIterator();
+<<<<<<< HEAD
  
         add=solve.genSt(initState, instrucciones.arriba);       //Crea los primeros cuatro estados generados del estado inicial
         if(add!=null){
@@ -431,6 +513,25 @@ public class Generador2
         }
  
         add=solve.genSt(initState, instrucciones.izquierda);
+=======
+
+        add=Generador2.genSt(initState, instrucciones.arriba,solve);       //Crea los primeros cuatro estados generados del estado inicial
+        if(add!=null){
+            iter.add(add);
+        }
+
+       add=Generador2.genSt(initState, instrucciones.derecha,solve);
+        if(add!=null){
+            iter.add(add);
+        }
+
+        add=Generador2.genSt(initState, instrucciones.abajo,solve);
+        if(add!=null){
+            iter.add(add);
+        }
+
+        add=Generador2.genSt(initState, instrucciones.izquierda,solve);
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
         if(add!=null){
             iter.add(add);
         }
@@ -445,6 +546,7 @@ public class Generador2
             if(e.visitado){                     //Asegura que no haya sido ya procesado y salta a la siguiente posición en caso contrario
                 continue;
             }
+<<<<<<< HEAD
  
             add=solve.genSt(e, instrucciones.arriba);       //Instrucciones de movimientos
             if(add!=null){                                  //Si el estado no tuvo ningún conflicto de validación se agrega a la lista de estados
@@ -469,11 +571,45 @@ public class Generador2
  
 
         
+=======
+
+            add=Generador2.genSt(e, instrucciones.arriba,solve);       //Instrucciones de movimientos
+            if(add!=null)
+            {                                  //Si el estado no tuvo ningún conflicto de validación se agrega a la lista de estados
+                iter.add(add);
+            }
+            else continue;
+            add=Generador2.genSt(e, instrucciones.derecha,solve);
+            if(add!=null)
+            {
+                iter.add(add);
+            }
+            else continue;
+
+            add=Generador2.genSt(e, instrucciones.abajo,solve);
+            if(add!=null)
+            {
+                iter.add(add);
+            }
+            else continue;
+
+            add=Generador2.genSt(e, instrucciones.izquierda,solve);
+            if(add!=null)
+            {
+                iter.add(add);
+            }
+            else continue;
+        }
+        //Here Starts What I Added -Daniel 
+        System.out.print("\n FINISHED ADDING STATES\n_____________________\n\n");
+        System.out.print("\n searching through Stack: \n");
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
         int tosearch[][][]=new int [face][rows][cols];
         tosearch[0][0][0]=1;
         tosearch[0][0][1]=2;
         tosearch[0][1][0]=3;
         tosearch[0][1][1]=0;
+<<<<<<< HEAD
         State stoSearch=solve.new State(tosearch);
         ArrayList<State> camino = buscarpilaConArray(stoSearch);
         System.out.print("\nRuta al estado final con list: " + camino);
@@ -481,6 +617,12 @@ public class Generador2
         System.out.print("\nRuta al estado final con stack: " + camino);
  
     }    
+=======
+        stoSearch=solve.new State(tosearch);
+       
+        System.out.print(buscarpilas.buscarpila(stoSearch).toString()+"\nFINISHED SEARCHING\n_____________________\n\n");
+    }
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
     public static class buscarpilas
     {
     	public static ArrayList<State> buscarpila(State finalstate)
@@ -493,6 +635,7 @@ public class Generador2
     		do
     		{
     			currState=mystack.pop();
+<<<<<<< HEAD
     			System.out.print("ESTADO ACTUAL:\n"+currState.toString());
     			currState.visitadop=true;
     			toreturn.add(currState);
@@ -538,11 +681,35 @@ public class Generador2
     				{
     					mystack.push(currState.vecinos.get("derecha"));
     				}
+=======
+    			System.out.print("ESTADO ACTUAL:\n"+currState.toString()+currState.visitado);
+    			currState.visitado=true;
+    			toreturn.add(currState);
+    			if(currState.vecinos.containsKey("arriba"))
+    			{
+    				mystack.push(currState).vecinos.get("arriba");
+    			}
+    			if(currState.vecinos.containsKey("abajo"))
+    			{
+    				mystack.push(currState).vecinos.get("abajo");
+    			}
+    			if(currState.vecinos.containsKey("izquierda"))
+    			{
+    				mystack.push(currState).vecinos.get("izquierda");
+    			}
+    			if(currState.vecinos.containsKey("derecha"))
+    			{
+    				mystack.push(currState).vecinos.get("derecha");
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
     			}
     		}while(!mystack.isEmpty() && !currState.equals(finalstate) /*&& !currState.visitado*/);
     		for(State e: toreturn)
     		{
+<<<<<<< HEAD
     			System.out.print(e.toString());
+=======
+    			e.toString();
+>>>>>>> 61463a9dbfdee31f0afb2700204a216457cac9dd
     		}
     		return toreturn;
     	}

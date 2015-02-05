@@ -2,7 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23141379-7f7a-4a4f-a141-b82f4a1c5849" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/cloning_1_8_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/cloning_1_8_1_sources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/cloning_1_8_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/cloning_1_8_5_sources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/doc.xml" />
+      <change type="DELETED" beforePath="C:\Users\ShaulaLuz\Documents\ITESO\9° Semestre\Agentes Inteligentes\GeneradorDeEstados\CODE\out\production\GeneradorEstados\Generador3$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\ShaulaLuz\Documents\ITESO\9° Semestre\Agentes Inteligentes\GeneradorDeEstados\CODE\out\production\GeneradorEstados\Generador3$State.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\ShaulaLuz\Documents\ITESO\9° Semestre\Agentes Inteligentes\GeneradorDeEstados\CODE\out\production\GeneradorEstados\Generador3$instrucciones.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\ShaulaLuz\Documents\ITESO\9° Semestre\Agentes Inteligentes\GeneradorDeEstados\CODE\out\production\GeneradorEstados\Generador3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\ShaulaLuz\Documents\ITESO\9° Semestre\Agentes Inteligentes\GeneradorDeEstados\CODE\src\Generador3.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$1.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$State.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$State.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$instrucciones.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2$instrucciones.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/Generador2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/GeneradorEstados$1.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/GeneradorEstados$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/GeneradorEstados$State.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/GeneradorEstados$State.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/GeneradorEstados$instrucciones.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/GeneradorEstados$instrucciones.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GeneradorEstados/GeneradorEstados.class" afterPath="$PROJECT_DIR$/out/production/GeneradorEstados/GeneradorEstados.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Thumbs.db" afterPath="$PROJECT_DIR$/../Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ss1.png" afterPath="$PROJECT_DIR$/../ss1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ss2.png" afterPath="$PROJECT_DIR$/../ss2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Generador2.java" afterPath="$PROJECT_DIR$/src/Generador2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GeneradorConBuscarpila.java" afterPath="$PROJECT_DIR$/src/GeneradorConBuscarpila.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GeneradorEstados.iml" afterPath="$PROJECT_DIR$/GeneradorEstados.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GeneradorEstados.java" afterPath="$PROJECT_DIR$/src/GeneradorEstados.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GeneradorEstados.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,16 +55,31 @@
       <file leaf-file-name="Generador2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Generador2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.6363635" vertical-offset="0" max-vertical-offset="5049">
-              <caret line="322" column="53" selection-start-line="322" selection-start-column="53" selection-end-line="322" selection-end-column="53" />
+            <state vertical-scroll-proportion="-4.7117295" vertical-offset="6178" max-vertical-offset="6885">
+              <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
               <folding>
-                <element signature="e#880#895#0" expanded="true" />
-                <element signature="method#toString#0;class#State#0;class#Generador2#0" expanded="false" />
-                <element signature="method#State#0;class#State#0;class#Generador2#0" expanded="false" />
-                <element signature="e#1819#1826#0" expanded="true" />
-                <element signature="method#visited#0;class#Generador2#0" expanded="false" />
-                <element signature="method#checkvalidity#0;class#Generador2#0" expanded="false" />
-                <element signature="method#find0#0;class#Generador2#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#913#928#0" expanded="true" />
+                <element signature="e#1852#1859#0" expanded="true" />
+                <element signature="e#2170#2179#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneradorConBuscarpila.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="7378">
+              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+              <folding>
+                <element signature="e#554#561#0" expanded="true" />
+                <element signature="e#3501#3510#0" expanded="true" />
+                <element signature="e#11599#11606#0" expanded="true" />
+                <element signature="e#11654#11661#0" expanded="true" />
+                <element signature="e#12708#12715#0" expanded="true" />
+                <element signature="e#12766#12773#0" expanded="true" />
+                <element signature="e#13856#13871#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,6 +95,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/GeneradorEstados.java" />
         <option value="$PROJECT_DIR$/src/Generador3.java" />
+        <option value="$PROJECT_DIR$/src/GeneradorConBuscarpila.java" />
         <option value="$PROJECT_DIR$/src/Generador2.java" />
       </list>
     </option>
@@ -88,14 +129,18 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="GeneradorEstados" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -133,16 +178,22 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_c2ba306e536fdf878271f7fe636a147ff37326ad/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cloning-1.8.5-dist/cloning-1.8.5/cloning-1.8.5-sources.jar!/" />
     <property name="LayoutCode.rearrangeEntriesJava" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
   </component>
   <component name="RunManager" selected="Application.Generador2">
     <configuration default="false" name="GeneradorEstados" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -205,6 +256,29 @@
       <module name="GeneradorEstados" />
       <envs />
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GeneradorConBuscarpila" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="GeneradorConBuscarpila" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="GeneradorEstados" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -361,16 +435,18 @@
       <listeners />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.GeneradorEstados" />
       <item index="1" class="java.lang.String" itemvalue="Application.Generador2" />
       <item index="2" class="java.lang.String" itemvalue="Application.Generador3" />
+      <item index="3" class="java.lang.String" itemvalue="Application.GeneradorConBuscarpila" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Application.Generador2" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Generador3" />
-        <item index="2" class="java.lang.String" itemvalue="Application.GeneradorEstados" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GeneradorConBuscarpila" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Generador3" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GeneradorEstados" />
       </list>
     </recent_temporary>
   </component>
@@ -388,8 +464,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -401,10 +477,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.051968504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16377953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16617863" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -435,7 +511,153 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="185" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>229</line>
+          <properties />
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>230</line>
+          <properties />
+          <option name="timeStamp" value="187" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>231</line>
+          <properties />
+          <option name="timeStamp" value="188" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>232</line>
+          <properties />
+          <option name="timeStamp" value="189" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>233</line>
+          <properties />
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>251</line>
+          <properties />
+          <option name="timeStamp" value="191" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>252</line>
+          <properties />
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>253</line>
+          <properties />
+          <option name="timeStamp" value="193" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>255</line>
+          <properties />
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>254</line>
+          <properties />
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>257</line>
+          <properties />
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>259</line>
+          <properties />
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>258</line>
+          <properties />
+          <option name="timeStamp" value="198" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>235</line>
+          <properties />
+          <option name="timeStamp" value="199" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>236</line>
+          <properties />
+          <option name="timeStamp" value="200" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>237</line>
+          <properties />
+          <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>296</line>
+          <properties />
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>297</line>
+          <properties />
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>299</line>
+          <properties />
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>298</line>
+          <properties />
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>300</line>
+          <properties />
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>302</line>
+          <properties />
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>303</line>
+          <properties />
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java</url>
+          <line>304</line>
+          <properties />
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="220" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -446,16 +668,52 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Generador2.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5049">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#913#928#0" expanded="true" />
+            <element signature="e#1852#1859#0" expanded="true" />
+            <element signature="e#2170#2179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generador2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5049">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#913#928#0" expanded="true" />
+            <element signature="e#1852#1859#0" expanded="true" />
+            <element signature="e#2170#2179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generador2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5049">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#913#928#0" expanded="true" />
+            <element signature="e#1852#1859#0" expanded="true" />
+            <element signature="e#2170#2179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generador2.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5899">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#880#895#0" expanded="true" />
-            <element signature="method#toString#0;class#State#0;class#Generador2#0" expanded="false" />
-            <element signature="method#State#0;class#State#0;class#Generador2#0" expanded="false" />
-            <element signature="e#1819#1826#0" expanded="true" />
-            <element signature="method#visited#0;class#Generador2#0" expanded="false" />
-            <element signature="method#checkvalidity#0;class#Generador2#0" expanded="false" />
-            <element signature="method#find0#0;class#Generador2#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#913#928#0" expanded="true" />
+            <element signature="e#1852#1859#0" expanded="true" />
+            <element signature="e#2170#2179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -465,26 +723,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3519">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#880#895#0" expanded="true" />
-            <element signature="method#toString#0;class#State#0;class#Generador2#0" expanded="false" />
-            <element signature="method#State#0;class#State#0;class#Generador2#0" expanded="false" />
-            <element signature="e#1819#1826#0" expanded="true" />
-            <element signature="method#visited#0;class#Generador2#0" expanded="false" />
-            <element signature="method#checkvalidity#0;class#Generador2#0" expanded="false" />
-            <element signature="method#find0#0;class#Generador2#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Generador3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4039" max-vertical-offset="5661">
-          <caret line="210" column="16" selection-start-line="210" selection-start-column="16" selection-end-line="227" selection-end-column="17" />
-          <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#223#230#0" expanded="true" />
-            <element signature="e#1383#1392#0" expanded="true" />
-            <element signature="e#8437#8452#0" expanded="true" />
+            <element signature="e#913#928#0" expanded="true" />
+            <element signature="e#1852#1859#0" expanded="true" />
+            <element signature="e#2170#2179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -494,26 +736,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3519">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#880#895#0" expanded="true" />
-            <element signature="method#toString#0;class#State#0;class#Generador2#0" expanded="false" />
-            <element signature="method#State#0;class#State#0;class#Generador2#0" expanded="false" />
-            <element signature="e#1819#1826#0" expanded="true" />
-            <element signature="method#visited#0;class#Generador2#0" expanded="false" />
-            <element signature="method#checkvalidity#0;class#Generador2#0" expanded="false" />
-            <element signature="method#find0#0;class#Generador2#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Generador3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4039" max-vertical-offset="5661">
-          <caret line="210" column="16" selection-start-line="210" selection-start-column="16" selection-end-line="227" selection-end-column="17" />
-          <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#223#230#0" expanded="true" />
-            <element signature="e#1383#1392#0" expanded="true" />
-            <element signature="e#8437#8452#0" expanded="true" />
+            <element signature="e#913#928#0" expanded="true" />
+            <element signature="e#1852#1859#0" expanded="true" />
+            <element signature="e#2170#2179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -579,34 +805,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Generador3.java">
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_31/src.zip!/java/util/LinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3784" max-vertical-offset="5015">
-          <caret line="237" column="49" selection-start-line="237" selection-start-column="49" selection-end-line="237" selection-end-column="49" />
+        <state vertical-scroll-proportion="-4.9888268" vertical-offset="11434" max-vertical-offset="20349">
+          <caret line="554" column="0" selection-start-line="554" selection-start-column="0" selection-end-line="554" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GeneradorConBuscarpila.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="7378">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#223#230#0" expanded="true" />
-            <element signature="e#1383#1392#0" expanded="true" />
-            <element signature="e#8437#8452#0" expanded="true" />
+            <element signature="e#554#561#0" expanded="true" />
+            <element signature="e#3501#3510#0" expanded="true" />
+            <element signature="e#11599#11606#0" expanded="true" />
+            <element signature="e#11654#11661#0" expanded="true" />
+            <element signature="e#12708#12715#0" expanded="true" />
+            <element signature="e#12766#12773#0" expanded="true" />
+            <element signature="e#13856#13871#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Generador2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.6363635" vertical-offset="0" max-vertical-offset="5049">
-          <caret line="322" column="53" selection-start-line="322" selection-start-column="53" selection-end-line="322" selection-end-column="53" />
+        <state vertical-scroll-proportion="-4.7117295" vertical-offset="6178" max-vertical-offset="6885">
+          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
           <folding>
-            <element signature="e#880#895#0" expanded="true" />
-            <element signature="method#toString#0;class#State#0;class#Generador2#0" expanded="false" />
-            <element signature="method#State#0;class#State#0;class#Generador2#0" expanded="false" />
-            <element signature="e#1819#1826#0" expanded="true" />
-            <element signature="method#visited#0;class#Generador2#0" expanded="false" />
-            <element signature="method#checkvalidity#0;class#Generador2#0" expanded="false" />
-            <element signature="method#find0#0;class#Generador2#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#913#928#0" expanded="true" />
+            <element signature="e#1852#1859#0" expanded="true" />
+            <element signature="e#2170#2179#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>cloning-1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>GeneradorEstados</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>cloning-1.8.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

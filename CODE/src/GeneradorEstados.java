@@ -60,7 +60,6 @@ public class GeneradorEstados {
             ArrayList<State> fnlSt = solve.genSt(inicial, generar);
 
 
-
             i++;
         }
     }
@@ -147,9 +146,9 @@ public class GeneradorEstados {
                 } else {
                     states.add(nxtSt);
                 }
-                swap = curInfo[0][rs+1][cl];
-                curInfo[0][rs+1][cl]=curInfo[0][rs][cl];
-                curInfo[0][rs][cl]=swap;
+                swap = curInfo[0][rs + 1][cl];
+                curInfo[0][rs + 1][cl] = curInfo[0][rs][cl];
+                curInfo[0][rs][cl] = swap;
 
                 nxtSt.info = curInfo;
                 nxtSt.valido = validate(estado);
@@ -174,9 +173,9 @@ public class GeneradorEstados {
                     states.add(nxtSt);
                 }
 
-                swap = curInfo[0][rs-1][cl];
-                curInfo[0][rs-1][cl]= curInfo[0][rs][cl];
-                curInfo[0][rs][cl]=swap;
+                swap = curInfo[0][rs - 1][cl];
+                curInfo[0][rs - 1][cl] = curInfo[0][rs][cl];
+                curInfo[0][rs][cl] = swap;
                 nxtSt.info = curInfo;
 
                 nxtSt.valido = validate(estado);
@@ -196,9 +195,9 @@ public class GeneradorEstados {
                 } else {
                     states.add(nxtSt);
                 }
-                swap = curInfo[0][rs][cl+1];
-                curInfo[0][rs][cl+1]= curInfo[0][rs][cl];
-                curInfo[0][rs][cl]=swap;
+                swap = curInfo[0][rs][cl + 1];
+                curInfo[0][rs][cl + 1] = curInfo[0][rs][cl];
+                curInfo[0][rs][cl] = swap;
                 nxtSt.info = curInfo;
                 nxtSt.valido = validate(estado);
                 if (!validate(estado)) {
@@ -218,9 +217,9 @@ public class GeneradorEstados {
                 } else {
                     states.add(nxtSt);
                 }
-                swap = curInfo[0][rs][cl-1];
-                curInfo[0][rs][cl-1]=curInfo[0][rs][cl];
-                curInfo[0][rs][cl]=swap;
+                swap = curInfo[0][rs][cl - 1];
+                curInfo[0][rs][cl - 1] = curInfo[0][rs][cl];
+                curInfo[0][rs][cl] = swap;
                 nxtSt.info = curInfo;
                 nxtSt.valido = validate(estado);
                 if (!validate(estado)) {
@@ -243,8 +242,7 @@ public class GeneradorEstados {
         }
 
 
-
-    estado = nxtSt;
+        estado = nxtSt;
 
         states.add(nxtSt);
         return states;

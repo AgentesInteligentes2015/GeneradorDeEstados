@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="doc">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../cloning-1.8.5-dist/cloning-1.8.5/doc" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

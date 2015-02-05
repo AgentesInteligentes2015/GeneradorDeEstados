@@ -1,3 +1,5 @@
+import com.rits.cloning.Cloner;
+
 import java.util.*;
 
 /**
@@ -216,8 +218,11 @@ public class Generador2
 
     /*Generar todos los estados posibles*/
     public State genSt(State estado, instrucciones inst) {
-        State nxtSt =null;
-        //nxtSt.info = estado.info;
+        Cloner cloner = new Cloner();
+        curInfo = cloner.deepClone(estado.info);
+
+        State nxtSt = new State(curInfo);
+
         int [][][] toswap =new int[face][rows][cols];
         int [] place0= new int [3];
 
@@ -341,7 +346,7 @@ public class Generador2
             iter.add(add);
         }
 
-       add=solve.genSt(initState, instrucciones.derecha);
+        add=solve.genSt(initState, instrucciones.derecha);
         if(add!=null){
             iter.add(add);
         }

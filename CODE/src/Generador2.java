@@ -329,6 +329,46 @@ public class Generador2
     }
 
     /*------------------------------------*/
+    public static ArrayList<State> buscarpilaConArray(State finalstate) {
+       // ArrayList<State> toreturn = new ArrayList<State>();
+        ArrayList<State> al = new ArrayList<State>();
+        ListIterator<State> iter = states.listIterator();
+
+        al.add(initState);
+
+        State currState;
+        currState = initState;
+
+        while (iter.hasPrevious())                  //Itera la lista de estados de derecha a izquierda
+        {
+            currState = al.get(0);
+            al.remove(0);
+
+            if(currState.vecinos.containsValue(finalstate)){
+            break;
+            }
+
+            if(currState.vecinos.containsKey("arriba"))
+            {
+                al.add(currState.vecinos.get("arriba"));
+            }
+            if(currState.vecinos.containsKey("abajo"))
+            {
+                al.add(currState.vecinos.get("abajo"));
+            }
+            if(currState.vecinos.containsKey("izquierda"))
+            {
+                al.add(currState.vecinos.get("izquierda"));
+            }
+            if(currState.vecinos.containsKey("derecha"))
+            {
+                al.add(currState.vecinos.get("derecha"));
+            }
+
+        }
+
+            return al;
+        }
 
 
     public static void main(String[] args)
@@ -377,7 +417,6 @@ public class Generador2
                 iter.add(add);
             }else continue;
 
-
             add=solve.genSt(e, instrucciones.derecha);
             if(add!=null){
                 iter.add(add);
@@ -392,9 +431,10 @@ public class Generador2
             if(add!=null){
                 iter.add(add);
             }else continue;
-
         }
 
+        ArrayList<State> camino = buscarpilaConArray(states.get(3));
+        System.out.print("\nRuta al estado final: " + camino);
 
     }
 }

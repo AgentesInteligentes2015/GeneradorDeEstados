@@ -3,7 +3,6 @@
 import java.util.Random;
 
 // It miss the movement, but don't know how to make it automate. Its why I didn't make it directly in our code.
-// To see if it works i 
 
 public class Casilla{
     
